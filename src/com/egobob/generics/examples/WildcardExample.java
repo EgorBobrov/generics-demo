@@ -18,7 +18,7 @@ public class WildcardExample {
         }
     }
 
-    public static Number maxNumber(List<? extends  Number> numbers) {
+    public static Number maxNumber(List<? extends Number> numbers) {
         return numbers.stream()
                 .max(Comparator.comparingDouble(Number::doubleValue))
                 .orElseThrow();
