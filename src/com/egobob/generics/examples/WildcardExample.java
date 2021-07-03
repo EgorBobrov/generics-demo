@@ -6,7 +6,13 @@ import java.util.List;
 
 public class WildcardExample {
 
-    public static void printAnyObjectList(List<?> list) {
+    public static void printAnyObjectList(List<Object> list) {
+        for (Object o: list) {
+            System.out.println(o.toString());
+        }
+    }
+
+    public static void printAnyGenericList(List<?> list) {
         for (Object o: list) {
             System.out.println(o.toString());
         }
@@ -41,6 +47,7 @@ public class WildcardExample {
 
     public static void main(String[] args) {
         List<String> strings = List.of("first", "second");
-        printAnyObjectList(strings);
+        printAnyGenericList(strings);
+        // printAnyObjectList(strings); compile-time error!
     }
 }
